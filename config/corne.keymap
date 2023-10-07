@@ -8,18 +8,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define default 0
-#define lower   1
-#define raise   2
-#define tri     3
-
 / {
 
         conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <lower raise>;
-            then-layer = <tri>;
+            if-layers = <1 2>;
+            then-layer = <3>;
                 };
         };
 
@@ -39,7 +34,7 @@
      &kp LCTRL    &kp Z     &kp X     &kp C     &kp V     &kp B             &kp N     &kp M   &kp COMMA  &kp DOT   &kp FSLH   &kp ESC
 // | --------- | ------- | ------- | ------- | ------- | ------- |       | ------- | ------- | ------- | ------- | ------- | -------- |
 //                                 |   GUI   |   LWR   |   SPC   |       |   ENT   |   RSE   |   ALT   |
-                                    &kp LGUI  &mo lower &kp SPACE          &kp RET  &mo raise   &kp RALT
+                                    &kp LGUI    &mo 1    &kp SPACE          &kp RET   &mo 2    &kp RALT
 //                                 \-----------------------------/       \-----------------------------/
 
                         >;
